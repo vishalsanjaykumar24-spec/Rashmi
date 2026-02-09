@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Celebrate 🎊</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{
+  background:#000;
+  color:#fff;
+  height:100vh;
+  overflow:hidden;
+}
+.container{
+  padding:20px;
+  text-align:center;
+}
+h2{font-size:1.8rem;margin-bottom:15px}
+.message{
+  font-size:1rem;
+  line-height:1.6;
+  min-height:200px;
+}
+.slide{
+  width:100%;
+  height:250px;
+  border-radius:15px;
+  background-size:cover;
+  background-position:center;
+  margin:20px 0;
+}
+.confetti{
+  position:absolute;
+  width:10px;
+  height:10px;
+  background:randomColor;
+  animation:fall 4s linear infinite;
+}
+@keyframes fall{
+  from{transform:translateY(-10vh)}
+  to{transform:translateY(110vh)}
+}
+</style>
+</head>
+
+<body>
+
+<audio autoplay loop>
+  <source src="22.mp3" type="audio/mpeg">
+</audio>
+
+<audio controls style="position:fixed;bottom:10px;left:10px">
+  <source src="22.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <h2>🎉 Celebration Time 🎉</h2>
+
+  <div class="slide" id="slide"></div>
+
+  <div class="message" id="text"></div>
+</div>
+
+<script>
+// Slideshow
+const photos=["45.jpg","IMG-45.jpg","45.jpg"];
+let i=0;
+setInterval(()=>{
+  document.getElementById("slide").style.backgroundImage=`url(${photos[i]})`;
+  i=(i+1)%photos.length;
+},3000);
+
+// Typewriter message
+const msg=`Happy happy happiest birthday to someone who is so special.
+The person with whom I share same interests.
+The person on whom I have right to scold, or laugh or being mad.
+The one who is little possessive ...
+the one who is always there to stand with me this (touch wood)...
+the one who cares about me.
+This person is always into idiot things ...
+anyway it is really nice to have a simple and good friend like you,
+I wish you a really beautiful birthday.
+Enjoy your day...
+click a lot of photos..
+and of course you are going to share them with me..`;
+
+let index=0;
+function type(){
+  if(index<msg.length){
+    document.getElementById("text").innerHTML+=msg.charAt(index);
+    index++;
+    setTimeout(type,30);
+  }
+}
+type();
+
+// Confetti blast
+for(let c=0;c<150;c++){
+  let conf=document.createElement("div");
+  conf.className="confetti";
+  conf.style.left=Math.random()*100+"vw";
+  conf.style.background=`hsl(${Math.random()*360},100%,50%)`;
+  conf.style.animationDelay=Math.random()*4+"s";
+  document.body.appendChild(conf);
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Wish</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    text-align: center;
+  }
+
+  .card {
+    padding: 40px 25px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 360px;
+  }
+
+  h1 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+  }
+
+  a {
+    display: inline-block;
+    padding: 14px 35px;
+    background: white;
+    color: #ff5f7e;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  a:hover {
+    transform: scale(1.05);
+  }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>UR Day 🎂</h1>
+  <h2>Happy Birthday <br><span id="name">My Special One 💖</span></h2>
+  <a href="Celebration1.html">Celebrate 🎉</a>
+</div>
+
+<script>
+  // 👉 CHANGE NAME HERE
+  document.getElementById("name").innerText = "💖RASHMI💖";
+</script>
+
+</body>
+</html>
